@@ -12,6 +12,7 @@ public class EmoticonHelper {
 
     public static List<Emoticon> getEmoticonsFromString(String stringInput){
         List<Emoticon> emoticons = new ArrayList<Emoticon>();
+        // TODO: need to parse String and get All emoticons
         return emoticons;
     }
 }
