@@ -26,6 +26,23 @@ public class Message {
         return emoticons;
     }
 
+    public void appendEmoticon(Emoticon emoticonToAppend){
+        this.emoticons.add(emoticonToAppend);
+
+    }
+
+    public void appendLink(Link linkToAppend){
+        this.links.add(linkToAppend);
+    }
+
+    public void appendMention(Mention mentionToAppend){
+        this.mentions.add(mentionToAppend);
+    }
+
+    public void appendText(String textToAppend){
+        this.texts.add(textToAppend);
+    }
+
     public Message() {
         this.links = new ArrayList<Link>();
         this.mentions = new ArrayList<Mention>();
