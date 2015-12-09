@@ -47,7 +47,7 @@ public class Message {
         this.texts.add(textToAppend);
     }
 
-    public Message(String stringInput) {
+    public Message(String stringInput) throws Exception{
         this.links = LinkHelper.getLinksFromString(stringInput);
         this.mentions = MentionHelper.getMentionsFromString(stringInput);
         this.emoticons = EmoticonHelper.getEmoticonsFromString(stringInput);
