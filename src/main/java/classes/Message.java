@@ -1,6 +1,10 @@
 package classes;
 
-import java.util.ArrayList;
+import helpers.string.EmoticonHelper;
+import helpers.string.LinkHelper;
+import helpers.string.MentionHelper;
+import helpers.string.TextHelper;
+
 import java.util.List;
 
 public class Message {
@@ -43,10 +47,10 @@ public class Message {
         this.texts.add(textToAppend);
     }
 
-    public Message() {
-        this.links = new ArrayList<Link>();
-        this.mentions = new ArrayList<Mention>();
-        this.emoticons = new ArrayList<Emoticon>();
-        this.texts = new ArrayList<String>();
+    public Message(String stringInput) {
+        this.links = LinkHelper.getLinksFromString(stringInput);
+        this.mentions = MentionHelper.getMentionsFromString(stringInput);
+        this.emoticons = EmoticonHelper.getEmoticonsFromString(stringInput);
+        this.texts = TextHelper.getTextsFromString(stringInput);
     }
 }
