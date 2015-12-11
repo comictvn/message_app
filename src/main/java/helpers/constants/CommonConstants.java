@@ -9,4 +9,5 @@ public class CommonConstants {
                     + "(([\\w\\-]+\\.){1,}?([\\w\\-.~]+\\/?)*"
                     + "[\\p{Alnum}.,%_=?&#\\-+()\\[\\]\\*$~@!:/{};']*)",
             Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL);
+    public static final String MENTION_PATTERN = "(?<=@).*?(?=\\W)";
 }
