@@ -23,7 +23,9 @@ public class MentionHelper {
         Pattern pattern = Pattern.compile(MENTION_PATTERN);
         Matcher matcher = pattern.matcher(stringInput);
         while (matcher.find()) {
-            mentions.add(new Mention(matcher.group().toString()));
+            int matchStart = matcher.start(1);
+            int matchEnd = matcher.end();
+            mentions.add(new Mention(stringInput.substring(matchStart, matchEnd)));
         }
         return mentions;
     }
