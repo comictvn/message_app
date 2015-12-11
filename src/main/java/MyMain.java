@@ -1,7 +1,7 @@
-
 public class MyMain {
-
-    public static String sampleFunction(){
-        return "";
+	
+	public static void main(String[] args)
+	{
+		System.out.println("Hello");
     }
 }
