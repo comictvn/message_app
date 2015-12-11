@@ -4,15 +4,27 @@ import classes.Mention;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static helpers.constants.CommonConstants.*;
 
 /**
  * this class contains all functions help us to work with "Mentions"
  */
 public class MentionHelper {
 
-    public static List<Mention> getMentionsFromString(String stringInput){
+    public static List<Mention> getMentionsFromString(String stringInput) {
+        return parseMentions(stringInput);
+    }
+
+    private static List<Mention> parseMentions(String stringInput) {
         List<Mention> mentions = new ArrayList<Mention>();
-        // TODO: need to parse String and get All Mentions
+        Pattern pattern = Pattern.compile(MENTION_PATTERN);
+        Matcher matcher = pattern.matcher(stringInput);
+        while (matcher.find()) {
+            mentions.add(new Mention(matcher.group().toString()));
+        }
         return mentions;
     }
 }
