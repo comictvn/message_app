@@ -10,7 +10,7 @@ public class CommonConstants {
                     + "[\\p{Alnum}.,%_=?&#\\-+()\\[\\]\\*$~@!:/{};']*)",
             Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL);
 
-    public static final String MENTION_PATTERN = "(?<=@).*?(?=\\W)";
+    public static final String MENTION_PATTERN = "@(\\S+)";
 
     public static final Pattern EMOTICON_PATTERN = Pattern.compile(
 		"\\((" + 
