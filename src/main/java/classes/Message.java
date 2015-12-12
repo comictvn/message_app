@@ -47,10 +47,25 @@ public class Message {
         this.texts.add(textToAppend);
     }
 
-    public Message(String stringInput) throws Exception{
-        this.links = LinkHelper.getLinksFromString(stringInput);
+    public Message() {
+
+    }
+
+    public Message(String stringInput, LinkHelperInterface linkHelperInterface) throws Exception{
+        this.links = linkHelperInterface.getLinksFromString(stringInput);
         this.mentions = MentionHelper.getMentionsFromString(stringInput);
         this.emoticons = EmoticonHelper.getEmoticonsFromString(stringInput);
         this.texts = TextHelper.getTextsFromString(stringInput);
+    }
+
+    public List<Link> parseInput(String input, LinkHelperInterface linkHelperInterface) throws Exception {
+        return linkHelperInterface.getLinksFromString(input);
+    }
+
+    public void testParseInput() {
+        Message message = new Message();
+        LinkHelperInterface mockObject = new LinkHelperMockWrapper();
+        String input = "test data";
+        assertEquals(checkParseInput, message.parseInput(input, mockObject));
     }
 }
